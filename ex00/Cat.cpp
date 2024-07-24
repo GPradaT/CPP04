@@ -15,6 +15,7 @@
 Cat::Cat() : Animal()
 {
 	type = "Cat";
+	sound = "MEEOOOW";
 	std::cout << "Cat constructor used." << std::endl;
 }
 
@@ -28,12 +29,9 @@ Cat::~Cat()
 	std::cout << "Cat destructor used" << std::endl;
 }
 
-std::string	Cat::makeSound() const
+Cat	&Cat::operator=(const Cat &src)
 {
-	return "meeow";
-}
-
-std::string	Cat::getType() const
-{
-	return "Cat";
+	this->type = src.getType();
+	this->sound = src.sound;
+	return *this;
 }

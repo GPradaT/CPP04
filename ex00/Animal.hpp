@@ -24,9 +24,11 @@ class	Animal
 	
 	public:
 		Animal();
-		~Animal();
+		Animal(const Animal &src);
+		virtual		~Animal();
+		Animal		&operator=(const Animal &src);
 		std::string	getType() const;
-		std::string	makeSound() const;
+		void		makeSound() const;
 };
 
 #endif

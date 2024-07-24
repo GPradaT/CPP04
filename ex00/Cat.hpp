@@ -15,7 +15,6 @@
 
 # include "Animal.hpp"
 
-# include <string>
 # include <iostream>
 
 class	Cat: public	Animal
@@ -24,8 +23,7 @@ class	Cat: public	Animal
 		Cat();
 		Cat(const Cat &src);
 		~Cat();
-		std::string	makeSound() const;
-		std::string	getType() const;
+		Cat	&operator=(const Cat &src);
 };
 
 #endif

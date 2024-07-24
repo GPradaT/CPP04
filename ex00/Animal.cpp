@@ -14,7 +14,14 @@
 
 Animal::Animal()
 {
+	sound = "Undefined sound";
+	type = "Undefined type";
 	std::cout << "animal Constructor used" << std::endl;
+}
+
+Animal::Animal(const Animal &src)
+{
+	*this = src;
 }
 
 Animal::~Animal()
@@ -22,12 +29,18 @@ Animal::~Animal()
 	std::cout << "animal Destructor used" << std::endl;
 }
 
+Animal	&Animal::operator=(const Animal &src)
+{
+	this->type = src.getType();
+	return *this;
+}
+
 std::string	Animal::getType() const
 {
 	return type;
 }
 
-std::string	Animal::makeSound() const
+void	Animal::makeSound() const
 {
-	return ""; 
+	std::cout << sound << std::endl; 
 }

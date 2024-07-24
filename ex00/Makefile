@@ -12,7 +12,7 @@
 
 NAME = Polymorphism
 
-SRCS = Animal.cpp Cat.cpp main.cpp
+SRCS = Animal.cpp Cat.cpp Dog.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(SRCS:.cpp=.d)
 
@@ -23,7 +23,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPPNDFLAGS) $(OBJS) -o $(NAME)
 
-%.o:%.cpp
+%.o:%.cpp %.hpp
 	$(CPPNDFLAGS) -c $< -o $@
 
 clean:
