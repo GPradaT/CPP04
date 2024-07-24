@@ -12,6 +12,7 @@
 
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -46,6 +47,24 @@ int main()
 	std::cout << meta->getType() << " " << std::endl;
 	meta->makeSound();
 
+	WrongCat notCat;
+	WrongAnimal wrongMeta;
+	WrongCat copyWrongCat = WrongCat(notCat);
+	WrongCat copyWrongConstructorCat = WrongCat(copyWrongCat);
+	WrongAnimal copyWrongMeta = WrongAnimal();
+	WrongAnimal copyWrongConstructorMeta = WrongAnimal(copyWrongMeta);
+	std::cout << "WRONG CATS SOUNDS:" << std::endl;
+	notCat.makeSound();
+	copyWrongCat.makeSound();
+	copyWrongConstructorCat.makeSound();	
+	std::cout << notCat.getType() << " " << std::endl;
+
+	std::cout << "UNDEFINED ANIMAL SOUNDS:" << std::endl;
+	wrongMeta.makeSound();
+	copyWrongMeta.makeSound();
+	copyWrongConstructorMeta.makeSound();	
+	std::cout << wrongMeta.getType() << " " << std::endl;
+	wrongMeta.makeSound();
 	std::cout << "DESTRUCTORS:" << std::endl;
 	delete dog;
 	delete cat;
