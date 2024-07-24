@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main_test.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gprada-t <gprada-t@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 22:29:51 by gprada-t          #+#    #+#             */
-/*   Updated: 2024/07/24 13:08:16 by gprada-t         ###   ########.fr       */
+/*   Created: 2024/07/23 22:29:59 by gprada-t          #+#    #+#             */
+/*   Updated: 2024/07/24 13:17:25 by gprada-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-# include "Animal.hpp"
-# include "Brain.hpp"
-
-# include <iostream>
-
-class	Dog : public	Animal
+int	main()
 {
-	private:
-		Brain	*mind;
-	public:
-		Dog();
-		Dog(const Dog &src);
-		~Dog();
-		Dog	&operator=(const Dog &src);
-};
+	Animal	*animals;
 
-#endif
+	animals = new Animal[100];
+
+	for (int i = 0; i < 100; ++i)
+	{
+		if (i < 50)
+			animals[i] = Cat();
+		else
+			animals[i] = Dog();
+	}
+	delete [] animals;
+	return 0;
+}
