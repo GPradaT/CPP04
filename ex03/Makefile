@@ -6,13 +6,13 @@
 #    By: gprada-t <gprada-t@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 22:30:03 by gprada-t          #+#    #+#              #
-#    Updated: 2024/07/27 11:55:25 by gprada-t         ###   ########.fr        #
+#    Updated: 2024/09/02 10:01:49 by gprada-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = WorldOnFire
+NAME = Interface&Recap
 
-SRCS = Animal.cpp Brain.cpp Cat.cpp Dog.cpp main.cpp
+SRCS = AMateria.cpp
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(SRCS:.cpp=.d)
 
@@ -30,7 +30,7 @@ clean:
 	rm -rf $(OBJS) $(DEPS)
 
 fclean: clean
-	rm -rf test $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
