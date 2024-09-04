@@ -6,14 +6,17 @@
 /*   By: gprada-t <gprada-t@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 22:29:35 by gprada-t          #+#    #+#             */
-/*   Updated: 2024/09/02 10:36:45 by gprada-t         ###   ########.fr       */
+/*   Updated: 2024/09/04 18:37:54 by gprada-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+# include "ICharacter.hpp"
 # include <string>
 # include <iostream>
+
+class	ICharacter;
 
 class	AMateria
 {

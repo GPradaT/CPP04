@@ -6,13 +6,13 @@
 /*   By: gprada-t <gprada-t@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 22:29:28 by gprada-t          #+#    #+#             */
-/*   Updated: 2024/09/02 10:35:06 by gprada-t         ###   ########.fr       */
+/*   Updated: 2024/09/04 18:29:50 by gprada-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : _type("Cure") {}
+Cure::Cure() : AMateria("Cure") {}
 
 Cure::Cure(const Cure &src) {(void)src;}
 
@@ -26,17 +26,12 @@ void	Cure::operator=(const Cure &src)
 	(void)src;
 }
 
-const std::string	&Cure::getType() const
-{
-	return _type;
-}
-
 void	Cure::use(ICharacter &target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
-AMateria	*Cure::clone()
+AMateria	*Cure::clone() const
 {
 	return new Cure();
 }

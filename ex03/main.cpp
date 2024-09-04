@@ -1,12 +1,18 @@
 #include "Ice.hpp"
+#include "Character.hpp"
 
 int main()
 {
+	std::cout << "HOla11 xDD" << std::endl;
 	AMateria *a = new Ice();
+	std::cout << "HOla22 xDD" << std::endl;
 	ICharacter *natos = new Character("Natos");
+	std::cout << "HOla33 xDD" << std::endl;
+	std::cout << natos->getName();
 	natos->equip(a);
-
+	std::cout << "HOlak 44 xDD" << std::endl;
 	natos->use(0, *natos);
+	delete natos;
 	/*{
 	IMateriaSource* src = new MateriaSource();
 

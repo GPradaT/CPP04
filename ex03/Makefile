@@ -6,13 +6,13 @@
 #    By: gprada-t <gprada-t@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 22:30:03 by gprada-t          #+#    #+#              #
-#    Updated: 2024/09/02 10:01:49 by gprada-t         ###   ########.fr        #
+#    Updated: 2024/09/04 18:40:37 by gprada-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Interface&Recap
+NAME = InterfaceRecap
 
-SRCS = AMateria.cpp
+SRCS = AMateria.cpp Ice.cpp Cure.cpp Character.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(SRCS:.cpp=.d)
 
@@ -23,7 +23,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPPNDFLAGS) $(OBJS) -o $(NAME)
 
-%.o:%.cpp %.hpp
+%.o: %.cpp %.hpp
 	$(CPPNDFLAGS) -c $< -o $@
 
 clean:
