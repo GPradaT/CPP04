@@ -1,9 +1,11 @@
 #include "Ice.hpp"
+#include "Cure.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
-	std::cout << "HOla11 xDD" << std::endl;
+/*	std::cout << "HOla11 xDD" << std::endl;
 	AMateria *a = new Ice();
 	std::cout << "HOla22 xDD" << std::endl;
 	ICharacter *natos = new Character("Natos");
@@ -13,7 +15,7 @@ int main()
 	std::cout << "HOlak 44 xDD" << std::endl;
 	natos->use(0, *natos);
 	delete natos;
-	/*{
+*/	
 	IMateriaSource* src = new MateriaSource();
 
 	src->learnMateria(new Ice());
@@ -24,8 +26,8 @@ int main()
 	AMateria* tmp;
 
 	tmp = src->createMateria("ice");
+	std::cout << &tmp << std::endl;
 	me->equip(tmp);
-
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
@@ -37,6 +39,6 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
-	}*/
+	
 	return 0;
 }

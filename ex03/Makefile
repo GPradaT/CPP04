@@ -6,13 +6,13 @@
 #    By: gprada-t <gprada-t@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 22:30:03 by gprada-t          #+#    #+#              #
-#    Updated: 2024/09/04 18:40:37 by gprada-t         ###   ########.fr        #
+#    Updated: 2024/09/05 15:38:19 by gprada-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = InterfaceRecap
 
-SRCS = AMateria.cpp Ice.cpp Cure.cpp Character.cpp main.cpp
+SRCS = AMateria.cpp Ice.cpp Cure.cpp Character.cpp main.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(SRCS:.cpp=.d)
 

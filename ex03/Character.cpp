@@ -2,9 +2,10 @@
 
 Character::Character() : _name(""), _max(0) {}
 
-Character::Character(const std::string &name) : _max(0)
+Character::Character(const std::string &name)
 {
 	_name = name;
+	_max = 0;
 	for (int i = 0; i < 4; ++i)
 		_Materias[i] = NULL;
 	std::cout << "tekagas" << std::endl;
@@ -23,11 +24,8 @@ Character	&Character::operator=(const Character &src)
 {
 	_name = src._name;
 	_max = src._max;
-	if (_max > 0)
-	{
-		for (int i = 0; i < _max; ++i)
-			_Materias[i] = src._Materias[i];
-	}
+	for (int i = 0; i < _max; ++i)
+		_Materias[i] = src._Materias[i];
 	return *this;
 }
 
@@ -40,12 +38,16 @@ const std::string	&Character::getName() const
 
 void		Character::equip(AMateria *m)
 {
+	std::cout << _max << std::endl;
+	std::cout << &m << std::endl;
+	std::cout << "HOLA" << std::endl;
 	if (m)
 	{
 		if (_max < 3)
 		{
 			_Materias[_max] = m->clone();
 			_max++;
+			std::cout << _Materias[_max]->getType();
 		}
 	}
 
@@ -59,12 +61,12 @@ void		Character::unequip(int idx)
 
 void		Character::use(int idx, ICharacter &target)
 {
-	std::cout << "HODEEEER" << std::endl;
-	std::cout << idx << std::endl;
-//	std::cout << _Materias[idx]->getType() << std::endl;
-	if (idx <= _max && _Materias[idx] != NULL)
+	std::cout << "AQUI LLEGO" << std::endl;
+	if (_Materias[idx] != NULL)
+	{
+		std::cout << _Materias[idx]->getType() << std::endl;
 		_Materias[idx]->use(target);
-	std::cout << _max << std::endl;
+	}
 
 }
 
