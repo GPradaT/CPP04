@@ -6,13 +6,13 @@
 /*   By: gprada-t <gprada-t@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 22:29:28 by gprada-t          #+#    #+#             */
-/*   Updated: 2024/09/04 19:29:23 by gprada-t         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:15:44 by gprada-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("Ice") {}
+Ice::Ice() : AMateria("ice") {}
 
 Ice::Ice(const Ice &src) {(void)src;}
 

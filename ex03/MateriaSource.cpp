@@ -10,7 +10,8 @@ MateriaSource::MateriaSource()
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; ++i)
-		_Materias[i] = NULL;
+		if (_Materias[i] != NULL)
+			delete _Materias[i];
 }
 
 void	MateriaSource::learnMateria(AMateria *m)
@@ -30,9 +31,10 @@ void	MateriaSource::learnMateria(AMateria *m)
 
 AMateria	*MateriaSource::createMateria(const std::string &type)
 {
-	for (int i = 0; i <= _Max; ++i)
+	for (int i = 0; _Materias[i] != NULL; ++i)
 	{
-		if (_Materias[i] != NULL && _Materias[i]->getType() == type)
+		std::cout << "Type _Materias[i]: " << _Materias[i]->getType() << std::endl;
+		if (_Materias[i]->getType() == type)
 			return _Materias[i];
 	}
 	return 0;

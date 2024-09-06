@@ -26,9 +26,10 @@ int main()
 	AMateria* tmp;
 
 	tmp = src->createMateria("ice");
-	std::cout << &tmp << std::endl;
+	std::cout << tmp->getType() << std::endl;
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
+	std::cout << tmp->getType() << std::endl;
 	me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
