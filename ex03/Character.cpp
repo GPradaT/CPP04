@@ -18,8 +18,6 @@ Character::~Character()
 		if (_Materias[i] != NULL)
 			delete _Materias[i];
 	}
-	//if (_floor)
-	//	delete _floor;
 }
 
 Character	&Character::operator=(const Character &src)
