@@ -12,7 +12,7 @@ class Character : public ICharacter
 		std::string	_name;
 		int		_max;
 		AMateria	*_Materias[4];
-//		AMateria	*_floor;
+		AMateria	*_floor;
 	public:
 		Character(const std::string &name);
 		Character(const Character &src);

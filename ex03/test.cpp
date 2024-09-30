@@ -16,7 +16,7 @@ int main()
 
 	Character* me = new Character("GPrada");
 	AMateria* tmp;
-
+	ICharacter* you = new Character("You");
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
@@ -26,12 +26,13 @@ int main()
 	tmp = src->createMateria("water");
 	me->equip(tmp);
 
-	me->use(0, *me); // Should use ice
-	me->use(1, *me); // Should use cure
-	me->use(2, *me); // Should use fire
-	me->use(3, *me); // Should use water
+	me->use(0, *you); // Should use ice
+	me->use(1, *you); // Should use cure
+	me->use(2, *you); // Should use fire
+	me->use(3, *you); // Should use water
 
 	delete me;
+	delete you;
 	delete src;
 
 	return 0;

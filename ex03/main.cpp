@@ -12,7 +12,6 @@ int main()
 	std::cout << "HOla33 xDD" << std::endl;
 	std::cout << natos->getName();
 	natos->equip(a);
-	std::cout << "HOlak 44 xDD" << std::endl;
 	natos->use(0, *natos);
 	delete natos;
 */	
@@ -31,15 +30,18 @@ int main()
 	tmp = src->createMateria("cure");
 	std::cout << tmp->getType() << std::endl;
 	me->equip(tmp);
+	me->unequip(0);
+	me->equip(tmp);
 
+	std::cout << "HOlak 44 xDD" << std::endl;
 	ICharacter* bob = new Character("bob");
 
 	me->use(0, *bob);
 	me->use(1, *bob);
 
 	delete bob;
-	delete me;
-	delete src;
+//	delete me;
+//	delete src;
 	
 	return 0;
 }

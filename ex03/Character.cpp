@@ -18,7 +18,8 @@ Character::~Character()
 		if (_Materias[i] != NULL)
 			delete _Materias[i];
 	}
-//	delete [] _Materias[4];
+	if (_floor)
+		delete _floor;
 }
 
 Character	&Character::operator=(const Character &src)
@@ -42,28 +43,25 @@ void		Character::equip(AMateria *m)
 	if (_max < 4)
 	{
 		if (_Materias[_max] != m)
-		{	_Materias[_max] = m->clone();
-		_max++;}
+		{
+			_Materias[_max] = m->clone();
+			_max++;
+		}
 	}
 }
 
 void		Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4 && _Materias[idx] != NULL)
-	{
-		delete _Materias[idx];
-		_Materias[idx] = NULL;
-	}
+	{	_floor = _Materias[idx];
+		std::cout << "_floor type-> " << _floor->getType();
+	_floor++;}
+	_Materias[idx] = NULL;
 }
 
 void		Character::use(int idx, ICharacter &target)
 {
-	std::cout << "AQUI LLEGO" << std::endl;
 	if (_Materias[idx] != NULL)
-	{
-		std::cout << _Materias[idx]->getType() << std::endl;
 		_Materias[idx]->use(target);
-	}
-
 }
 
