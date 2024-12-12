@@ -6,8 +6,9 @@ Character::Character(const std::string &name)
 {
 	_name = name;
 	_max = 0;
+	_floorMax = 0;
 	for (int i = 0; i < 4; ++i)
-		_Materias[i] = NULL;
+		_Materias[i] = NULL, _floor[i] = NULL;
 	std::cout << "tekagas" << std::endl;
 }
 
@@ -15,6 +16,8 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
+		if (_floor[i] != NULL)
+			delete _floor[i];
 		if (_Materias[i] != NULL)
 			delete _Materias[i];
 	}
@@ -51,9 +54,10 @@ void		Character::equip(AMateria *m)
 void		Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4 && _Materias[idx] != NULL)
-	{	_floor = _Materias[idx];
-		std::cout << "_floor type-> " << _floor->getType();
-	_floor++;}
+	{
+		_floor[_floorMax] = _Materias[idx];
+		_floorMax++;
+	}
 	_Materias[idx] = NULL;
 }
 

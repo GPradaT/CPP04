@@ -11,8 +11,9 @@ class Character : public ICharacter
 		Character();
 		std::string	_name;
 		int		_max;
+		int		_floorMax;
 		AMateria	*_Materias[4];
-		AMateria	*_floor;
+		AMateria	*_floor[4];
 	public:
 		Character(const std::string &name);
 		Character(const Character &src);
